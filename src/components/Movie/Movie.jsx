@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-export const Movie = ({ id, coverImg, title, summary, genres, rating }) => {
+export const Movie = ({ id, coverImg, title, rating }) => {
   return (
     <div className="relative group">
       <div className="relative">
@@ -27,6 +27,4 @@ Movie.propTypes = {
   id: PropTypes.number.isRequired,
   coverImg: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  summary: PropTypes.string.isRequired,
-  genres: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
