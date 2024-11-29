@@ -7,6 +7,10 @@ module.exports = {
         main: "#D91656",
         sub1: "#FFB200",
       },
+      fontFamily: {
+        display: ["Bebas Neue", "sans-serif"],
+        pretendard: ["Pretendard", "sans-serif"],
+      },
     },
   },
   plugins: [require("daisyui")],
