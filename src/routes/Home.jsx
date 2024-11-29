@@ -23,20 +23,23 @@ function Home() {
   };
 
   useEffect(() => {
-    getMovies();
+    setTimeout(() => getMovies(), 1200);
   }, []);
 
+  console.log(movies);
   return (
     <div className="px-5">
       {loading ? (
-        <Loading />
+        <div className="flex items-center justify-center">
+          <Loading />
+        </div>
       ) : (
-        <div className="grid xl:grid-cols-8 lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-6">
           {movies.map((movie) => (
             <Movie
               key={`movie-${movie.id}`}
               id={movie.id}
-              coverImg={movie.medium_cover_image}
+              coverImg={movie.large_cover_image}
               title={movie.title}
               summary={movie.summary}
               rating={movie.rating}

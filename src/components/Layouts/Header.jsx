@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const Header = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
@@ -11,7 +11,10 @@ export const Header = () => {
 
   return (
     <div className="flex items-center justify-between p-5">
-      <div className="font-bold text-3xl">WHATS NEXT</div>
+      {/* title */}
+      <div className="text-3xl text-main font-display">WHATS NEXT</div>
+
+      {/* theme controller */}
       <label className="swap swap-rotate">
         <input
           type="checkbox"
@@ -22,7 +25,7 @@ export const Header = () => {
 
         {/* sun icon */}
         <svg
-          className="swap-off h-10 w-10 fill-current"
+          className="swap-off h-8 w-8 fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -31,7 +34,7 @@ export const Header = () => {
 
         {/* moon icon */}
         <svg
-          className="swap-on h-10 w-10 fill-current"
+          className="swap-on h-8 w-8 fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
