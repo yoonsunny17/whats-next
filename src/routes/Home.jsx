@@ -6,7 +6,6 @@ import { MovieContext } from "../context/MovieContext";
 function Home() {
   const { movies, updateMovies } = useContext(MovieContext);
   const [loading, setLoading] = useState(true);
-  // const [movies, setMovies] = useState([]);
 
   const getMovies = async () => {
     try {
@@ -26,7 +25,6 @@ function Home() {
     setTimeout(() => getMovies(), 1200);
   }, []);
 
-  console.log(movies);
   return (
     <div className="px-5">
       {loading ? (

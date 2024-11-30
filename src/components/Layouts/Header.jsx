@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 
 export const Header = () => {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
   };
+
   useEffect(() => {
     document.querySelector("html").setAttribute("data-theme", theme);
   }, [theme]);
